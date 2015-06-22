@@ -15,6 +15,7 @@ public class GameCoreServiceImpl extends CoreModule implements GameCoreService {
 
     @Override
     public void initialize() {
+        // there is need to be written some code
         //To change body of implemented methods use File | Settings | File Templates.
     }
 }
