@@ -1,0 +1,14 @@
+[06-22 04:27:21,406, 378] MainLog server is starting!
+[06-22 04:27:21,408, 380] core.Server starting initialize modules
+[06-22 04:27:21,408, 380] core.Server creating message system
+[06-22 04:27:21,431, 403] core.Server initialize services
+[06-22 04:27:21,444, 416] api.MessagesSystem register subscriber frontend.FrontendImpl
+[06-22 04:27:21,444, 416] api.MessagesSystem register subscriber database.DataBaseServiceImpl
+[06-22 04:27:21,445, 417] api.MessagesSystem register subscriber accounts.AccountServiceImpl
+[06-22 04:27:21,445, 417] api.MessagesSystem register subscriber resources.ResourceServiceImpl
+[06-22 04:27:21,445, 417] api.MessagesSystem register subscriber gameCore.GameCoreServiceImpl
+[06-22 04:27:21,546, 518] api.MessagesSystem trying execute messages for: 
+[06-22 04:27:21,546, 518] api.MessagesSystem trying execute messages for: 
+[06-22 04:27:21,546, 518] api.MessagesSystem trying execute messages for: 
+[06-22 04:27:21,546, 518] api.MessagesSystem trying execute messages for: 
+[06-22 04:27:21,546, 518] api.MessagesSystem trying execute messages for: 

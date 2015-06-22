@@ -1,0 +1,9 @@
+[06-22 04:23:13,129, 539] MainLog server is starting!
+[06-22 04:23:13,149, 559] core.Server starting initialize modules
+[06-22 04:23:13,149, 559] core.Server creating message system
+[06-22 04:23:13,154, 564] core.Server initialize services
+[06-22 04:23:13,189, 599] api.MessagesSystem register subscriber frontend.FrontendImpl
+[06-22 04:23:13,189, 599] api.MessagesSystem register subscriber database.DataBaseServiceImpl
+[06-22 04:23:13,189, 599] api.MessagesSystem register subscriber accounts.AccountServiceImpl
+[06-22 04:23:13,190, 600] api.MessagesSystem register subscriber resources.ResourceServiceImpl
+[06-22 04:23:13,190, 600] api.MessagesSystem register subscriber gameCore.GameCoreServiceImpl

@@ -1,0 +1,6 @@
+[06-22 04:08:58,620, 2583] MainLog server is starting!
+[06-22 04:08:58,621, 2584] core.Server starting initialize modules
+[06-22 04:08:58,621, 2584] core.Server creating message system
+[06-22 04:08:58,622, 2585] core.Server initialize services
+[06-22 04:08:58,631, 2594] api.MessagesSystem register subscriber 
+[06-22 04:08:58,632, 2595] api.MessagesSystem register subscriber 
