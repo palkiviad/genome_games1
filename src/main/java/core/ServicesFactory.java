@@ -1,7 +1,7 @@
 package core;
 
 import accounts.AccountServiceImpl;
-import api.CoreModule;
+import api.services.Service;
 import database.DataBaseServiceImpl;
 import frontend.FrontendImpl;
 import gameCore.GameCoreServiceImpl;
@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class ServicesFactory {
 
-    public static List<CoreModule> createModules() {
-        List<CoreModule> list = new LinkedList<CoreModule>();
+    public static List<Service> createModules() {
+        List<Service> list = new LinkedList<Service>();
         list.add(createFrontend());
         list.add(createDataBase());
         list.add(createAccountService());
@@ -29,24 +29,24 @@ public class ServicesFactory {
         return list;
     }
 
-    private static CoreModule createGameCore() {
+    private static Service createGameCore() {
         return new GameCoreServiceImpl();
     }
 
 
-    private static CoreModule createAccountService() {
+    private static Service createAccountService() {
         return new AccountServiceImpl();
     }
 
-    private static CoreModule createResourcesService() {
+    private static Service createResourcesService() {
         return new ResourceServiceImpl();
     }
 
-    private static CoreModule createDataBase() {
+    private static Service createDataBase() {
         return new DataBaseServiceImpl();
     }
 
-    private static CoreModule createFrontend() {
+    private static Service createFrontend() {
         return new FrontendImpl();
     }
 }

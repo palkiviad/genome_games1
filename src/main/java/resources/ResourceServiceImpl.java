@@ -1,7 +1,8 @@
 package resources;
 
-import api.CoreModule;
-import api.ResourceService;
+import api.services.Service;
+import api.services.ResourceService;
+import api.services.ServiceType;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,11 +11,16 @@ import api.ResourceService;
  * Time: 5:03
  * To change this template use File | Settings | File Templates.
  */
-public class ResourceServiceImpl extends CoreModule implements ResourceService {
+public class ResourceServiceImpl extends Service implements ResourceService {
 
 
     @Override
     public void initialize() {
         //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public int getType() {
+        return ServiceType.RESOURCES.ordinal();  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

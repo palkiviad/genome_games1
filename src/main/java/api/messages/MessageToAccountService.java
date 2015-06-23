@@ -1,8 +1,6 @@
 package api.messages;
 
-import api.AccountService;
-import api.MessageSystemSubscriber;
-import api.SubscriberAddress;
+import api.services.AccountService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,6 +22,7 @@ public abstract class MessageToAccountService extends Message {
     public final void execute(MessageSystemSubscriber subscriber) {
         if (subscriber instanceof AccountService) {
             exec((AccountService) subscriber);
+            return;
         }
         logger.error("subscriber type not supported! " + subscriber.getClass().getName());
     }

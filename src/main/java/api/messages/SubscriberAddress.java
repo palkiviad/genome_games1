@@ -1,4 +1,4 @@
-package api;
+package api.messages;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

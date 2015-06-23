@@ -1,8 +1,5 @@
 package api.messages;
 
-import api.MessageSystemSubscriber;
-import api.SubscriberAddress;
-
 /**
  * Created with IntelliJ IDEA.
  * User: Алкивиад
@@ -18,7 +15,7 @@ public abstract class Message {
     public Message(SubscriberAddress target, SubscriberAddress sender) {
         this.target = target;
         this.sender = sender;
-        name = getClass().getName() + " sender is:  " + sender.toString() + ", target is: " + target.toString();
+        name = getClass().getName() + " sender is:  " + sender + ", target is: " + target;
     }
 
     public SubscriberAddress getTarget() {

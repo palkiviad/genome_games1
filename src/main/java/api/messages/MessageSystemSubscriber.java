@@ -1,6 +1,4 @@
-package api;
-
-import api.messages.MessagesSystem;
+package api.messages;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,4 +11,8 @@ public interface MessageSystemSubscriber {
     SubscriberAddress getAddress();
 
     void registerInMessageSystem(MessagesSystem system);
+
+    MessagesSystem getMessageSystem();
+
+    int getType();
 }

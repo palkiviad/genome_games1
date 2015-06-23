@@ -1,7 +1,11 @@
 package core;
 
-import api.CoreModule;
+import api.messages.Message;
 import api.messages.MessagesSystem;
+import api.services.Frontend;
+import api.services.Service;
+import api.services.ServiceType;
+import frontend.messages.AskRegisterMessage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,20 +27,26 @@ public class Server extends Thread {
         logger.info("creating message system");
         messages = new MessagesSystem();
         logger.info("initialize services");
-        List<CoreModule> list = ServicesFactory.createModules();
-        for (CoreModule module : list) {
+        List<Service> list = ServicesFactory.createModules();
+        for (Service module : list) {
             startModule(module);
         }
         setDaemon(true);
         start();
+        Message message = new AskRegisterMessage(messages.getAddress(ServiceType.FRONTEND.ordinal()), null, "mumbu-umbu");
+        messages.sendMessage(message);
+        Message message1 = new AskRegisterMessage(messages.getAddress(ServiceType.FRONTEND.ordinal()), null, "hruku-umbu");
+        messages.sendMessage(message1);
+        Message message2 = new AskRegisterMessage(messages.getAddress(ServiceType.FRONTEND.ordinal()), null, "hruku-umbu");
+        messages.sendMessage(message2);
         try {
-            Thread.sleep(60000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             logger.error(e);
         }
     }
 
-    private void startModule(CoreModule module) {
+    private void startModule(Service module) {
         module.initialize();
         module.registerInMessageSystem(messages);
         Thread thread = new Thread(module);

@@ -1,7 +1,9 @@
 package frontend.messages;
 
-import api.AccountService;
-import api.SubscriberAddress;
+import api.entity.Account;
+import api.messages.Message;
+import api.services.AccountService;
+import api.messages.SubscriberAddress;
 import api.messages.MessageToAccountService;
 
 /**
@@ -14,13 +16,18 @@ import api.messages.MessageToAccountService;
 public class RegisterUserMessage extends MessageToAccountService {
 
 
-    public RegisterUserMessage(SubscriberAddress target, SubscriberAddress sender) {
+    private final String token;
+
+    public RegisterUserMessage(SubscriberAddress target, SubscriberAddress sender, String token) {
         super(target, sender);
+        this.token = token;
     }
 
     @Override
     public void exec(AccountService subscriber) {
-
+        Account account = subscriber.registerAccount(token);
+        Message callback = new RegisteredAccountMessage(getSender(), getTarget(), account);
+        subscriber.getMessageSystem().sendMessage(callback);
     }
 
 
