@@ -1,7 +1,7 @@
 package core;
 
 import api.CoreModule;
-import api.MessagesSystem;
+import api.messages.MessagesSystem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +14,7 @@ import java.util.List;
  * Time: 3:37
  * To change this template use File | Settings | File Templates.
  */
-public class Server extends  Thread{
+public class Server extends Thread {
     private final static Logger logger = LogManager.getLogger(Server.class);
     private MessagesSystem messages;
 
@@ -40,6 +40,7 @@ public class Server extends  Thread{
         module.initialize();
         module.registerInMessageSystem(messages);
         Thread thread = new Thread(module);
+        thread.setName(module.toString() + "_" + module.getAddress());
         thread.setDaemon(true);
         thread.start();
     }

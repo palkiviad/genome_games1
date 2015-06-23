@@ -1,5 +1,7 @@
 package api;
 
+import api.messages.MessagesSystem;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Алкивиад

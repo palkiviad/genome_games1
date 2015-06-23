@@ -1,5 +1,7 @@
-package api;
+package api.messages;
 
+import api.MessageSystemSubscriber;
+import api.SubscriberAddress;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

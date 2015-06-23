@@ -1,4 +1,7 @@
-package api;
+package api.messages;
+
+import api.MessageSystemSubscriber;
+import api.SubscriberAddress;
 
 /**
  * Created with IntelliJ IDEA.
